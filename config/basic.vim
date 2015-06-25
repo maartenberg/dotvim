@@ -1,0 +1,84 @@
+" basic.vim: first sourced file in .vimrc
+
+set backspace=indent,eol,start
+" allow backspacing over everything in insert mode
+
+if has("vms")
+  set nobackup		" do not keep a backup file, use versions instead
+else
+  set backup		" keep a backup file
+endif
+set history=50		" keep 50 lines of command line history
+set ruler			" show the cursor position all the time
+set showcmd			" display incomplete commands
+set incsearch		" do incremental searching
+set tabstop=4		" python-style tab size, screen size limited
+set shiftwidth=4	" same
+set noet			" tabs will be tabs
+set fdm=syntax		" foldmethod should be somewhat smart
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" Makes C-u and C-w less destructive, as they now are undoable.
+inoremap <C-U> <C-G>u<C-U>
+inoremap <C-w> <c-g>u<c-w>
+
+" Enable mouse if the terminal supports it.
+if has('mouse') 
+  set mouse=a
+endif
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 70 characters
+  " 70 characters = 1 vsplit
+  autocmd FileType text setlocal textwidth=70
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")
+
+" Backupdir setup
+set backupdir=./.backup/,~/.backup//,/tmp//
+
+" F2 as paste toggle in insert mode
+set pastetoggle=<F2>
+
+" C-Tab, C-S-Tab as jump to tabs
+map <C-Tab> 	:tabnext<CR>
+imap <C-Tab> 	<C-O>:tabnext<CR>
+map <C-S-Tab>	:tabprev<CR>
+imap <C-Tab>	<C-O>:tabprev<CR>
