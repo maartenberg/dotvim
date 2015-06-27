@@ -82,3 +82,6 @@ map <C-Tab> 	:tabnext<CR>
 imap <C-Tab> 	<C-O>:tabnext<CR>
 map <C-S-Tab>	:tabprev<CR>
 imap <C-Tab>	<C-O>:tabprev<CR>
+
+" Map backspace to removing search highlight
+nnoremap <silent> <BS> :nohlsearch<CR>
