@@ -85,3 +85,7 @@ imap <C-Tab>	<C-O>:tabprev<CR>
 
 " Map backspace to removing search highlight
 nnoremap <silent> <BS> :nohlsearch<CR>
+
+" Set spelling languages
+set spell
+set spelllang=en,nl
