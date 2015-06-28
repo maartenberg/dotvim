@@ -67,11 +67,11 @@ if has("autocmd")
 
 else
 
-  set autoindent		" always set autoindenting on
+  set autoindent		" always set auto indenting on
 
 endif " has("autocmd")
 
-" Backupdir setup
+" Backup directory setup
 set backupdir=./.backup/,~/.backup//,/tmp//
 
 " F2 as paste toggle in insert mode
@@ -89,3 +89,7 @@ nnoremap <silent> <BS> :nohlsearch<CR>
 " Set spelling languages
 set spell
 set spelllang=en,nl
+
+" Disable spelling check in vim documentation, git config
+autocmd FileType help setlocal nospell
+autocmd FileType gitconfig setlocal nospell

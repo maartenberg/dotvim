@@ -4,6 +4,9 @@
 **/tags
 .netrwhist
 
+# ignore spelling additions
+spell/**
+
 # ignore plugins managed by symlink via vim-latexsuite
 plugin/filebrowser.vim
 plugin/imaps.vim
