@@ -30,3 +30,7 @@
 	path = bundle/salt-vim
 	url = git@github.com:saltstack/salt-vim.git
 	ignore = dirty
+[submodule "bundle/vim-latex"]
+	path = bundle/vim-latex
+	url = https://github.com/vim-latex/vim-latex.git
+	ignore = dirty
