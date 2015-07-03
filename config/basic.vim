@@ -87,9 +87,9 @@ imap <C-Tab>	<C-O>:tabprev<CR>
 nnoremap <silent> <BS> :nohlsearch<CR>
 
 " Set spelling languages
-set spell
 set spelllang=en,nl
 
-" Disable spelling check in vim documentation, git config
-autocmd FileType help setlocal nospell
-autocmd FileType gitconfig setlocal nospell
+autocmd FileType plaintex setlocal spell
+autocmd FileType tex setlocal nospell
+
+map z!			:set spell!<CR>
