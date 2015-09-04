@@ -72,7 +72,7 @@ else
 endif " has("autocmd")
 
 " Backup directory setup
-set backupdir=./.backup/,~/.backup//,/tmp//
+set backupdir=./.backup/,~/.backup//,~/vimbackup//,/tmp//
 
 " F2 as paste toggle in insert mode
 set pastetoggle=<F2>

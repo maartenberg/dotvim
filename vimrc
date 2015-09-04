@@ -6,8 +6,13 @@ if v:progname =~? "evim"
   finish
 endif
 
-source ~/.vim/config/basic.vim
-source ~/.vim/config/commands.vim
-source ~/.vim/config/latex.vim
+if has('win32')
+	let scriptdir = "~/vimfiles"
+else
+	let scriptdir = "~/.vim"
+endif
+exec "source " . scriptdir . "/config/basic.vim"
+exec "source " . scriptdir . "/config/commands.vim"
+exec "source " . scriptdir . "/config/latex.vim"
 
 execute pathogen#infect()
