@@ -1,4 +1,4 @@
-" basic.vim: first sourced file in .vimrc
+" basic.vim: first sourced file in vimrc
 
 set backspace=indent,eol,start
 " allow backspacing over everything in insert mode
@@ -27,13 +27,6 @@ inoremap <C-w> <c-g>u<c-w>
 " Enable mouse if the terminal supports it.
 if has('mouse') 
   set mouse=a
-endif
-
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if &t_Co > 2 || has("gui_running")
-  syntax on
-  set hlsearch
 endif
 
 " Only do this part when compiled with support for autocommands.

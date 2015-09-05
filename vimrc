@@ -13,6 +13,7 @@ else
 endif
 exec "source " . scriptdir . "/config/basic.vim"
 exec "source " . scriptdir . "/config/commands.vim"
+exec "source " . scriptdir . "/config/graphic.vim"
 exec "source " . scriptdir . "/config/latex.vim"
 
 execute pathogen#infect()
