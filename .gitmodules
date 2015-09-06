@@ -18,10 +18,6 @@
 	path = bundle/vim-dm-syntax
 	url = git@github.com:wlue/vim-dm-syntax.git
 	ignore = dirty
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
-	url = git@github.com:plasticboy/vim-markdown.git
-	ignore = dirty
 [submodule "bundle/vim-orgmode"]
 	path = bundle/vim-orgmode
 	url = git@github.com:jceb/vim-orgmode.git
@@ -34,3 +30,9 @@
 	path = bundle/vim-latex
 	url = https://github.com/vim-latex/vim-latex.git
 	ignore = dirty
+[submodule "bundle/vim-pandoc"]
+	path = bundle/vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc.git
+[submodule "bundle/vim-pandoc-syntax"]
+	path = bundle/vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
