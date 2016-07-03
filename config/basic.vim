@@ -8,10 +8,18 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
+
+" Backup directory setup
+set backupdir=./.backup/,~/.backup//,~/vimbackup//,/tmp//
+
+set number			" show line number on current line...
+set relativenumber	" ... and relative line numbers on the others
+
 set history=50		" keep 50 lines of command line history
 set ruler			" show the cursor position all the time
 set showcmd			" display incomplete commands
 set incsearch		" do incremental searching
+
 set tabstop=4		" python-style tab size, screen size limited
 set shiftwidth=4	" same
 set noet			" tabs will be tabs
@@ -25,7 +33,7 @@ inoremap <C-U> <C-G>u<C-U>
 inoremap <C-w> <c-g>u<c-w>
 
 " Enable mouse if the terminal supports it.
-if has('mouse') 
+if has('mouse')
   set mouse=a
 endif
 
@@ -37,6 +45,7 @@ if has("autocmd")
   " 'cindent' is on in C files, etc.
   " Also load indent files, to automatically do language-dependent indenting.
   filetype plugin indent on
+  set autoindent
 
   " Put these in an autocmd group, so that we can delete them easily.
   augroup vimrcEx
@@ -64,8 +73,6 @@ else
 
 endif " has("autocmd")
 
-" Backup directory setup
-set backupdir=./.backup/,~/.backup//,~/vimbackup//,/tmp//
 
 " F2 as paste toggle in insert mode
 set pastetoggle=<F2>
@@ -86,3 +93,12 @@ autocmd FileType plaintex setlocal spell
 autocmd FileType tex setlocal nospell
 
 map z!			:set spell!<CR>
+
+" Trailing space highlighting, taken from
+" <http://vim.wikia.com/wiki/Highlight_unwanted_spaces>
+ highlight ExtraWhitespace ctermbg=red guibg=red
+ match ExtraWhitespace /\s\+$/
+ autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+ autocmd BufWinLeave * call clearmatches()

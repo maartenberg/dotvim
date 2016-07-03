@@ -36,9 +36,6 @@
 [submodule "bundle/vim-pandoc-syntax"]
 	path = bundle/vim-pandoc-syntax
 	url = https://github.com/vim-pandoc/vim-pandoc-syntax.git
-[submodule "bundle/goyo"]
-	path = bundle/goyo
-	url = https://github.com/junegunn/goyo.vim.git
 [submodule "bundle/limelight"]
 	path = bundle/limelight
 	url = https://github.com/junegunn/limelight.vim.git
