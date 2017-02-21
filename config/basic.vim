@@ -102,3 +102,9 @@ map z!			:set spell!<CR>
  autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
  autocmd InsertLeave * match ExtraWhitespace /\s\+$/
  autocmd BufWinLeave * call clearmatches()
+
+" Remove the beep
+set visualbell t_vb= noerrorbells
+if has('autocmd')
+	autocmd GUIEnter * set visualbell t_vb=
+endif
