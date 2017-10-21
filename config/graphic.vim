@@ -18,4 +18,12 @@ if has("gui_running")
 	elseif has("gui_gtk2")
 		set guifont=Inconsolata\ 11
 	endif
+
+	" C-Tab, C-S-Tab as jump to tabs
+	" Note: won't work in a terminal
+	" https://stackoverflow.com/questions/1646819/how-can-i-map-ctrl-tab-to-something-in-vim
+	map <C-Tab> 	:tabnext<CR>
+	imap <C-Tab> 	<C-O>:tabnext<CR>
+	map <C-S-Tab>	:tabprev<CR>
+	imap <C-Tab>	<C-O>:tabprev<CR>
 endif

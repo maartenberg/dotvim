@@ -77,31 +77,21 @@ endif " has("autocmd")
 " F2 as paste toggle in insert mode
 set pastetoggle=<F2>
 
-" C-Tab, C-S-Tab as jump to tabs
-map <C-Tab> 	:tabnext<CR>
-imap <C-Tab> 	<C-O>:tabnext<CR>
-map <C-S-Tab>	:tabprev<CR>
-imap <C-Tab>	<C-O>:tabprev<CR>
-
 " Map backspace to removing search highlight
 nnoremap <silent> <BS> :nohlsearch<CR>
 
 " Set spelling languages
 set spelllang=en,nl
-
-autocmd FileType plaintex setlocal spell
-autocmd FileType tex setlocal nospell
-
 map z!			:set spell!<CR>
 
 " Trailing space highlighting, taken from
 " <http://vim.wikia.com/wiki/Highlight_unwanted_spaces>
- highlight ExtraWhitespace ctermbg=red guibg=red
- match ExtraWhitespace /\s\+$/
- autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
- autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
- autocmd InsertLeave * match ExtraWhitespace /\s\+$/
- autocmd BufWinLeave * call clearmatches()
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
 
 " Remove the beep
 set visualbell t_vb= noerrorbells

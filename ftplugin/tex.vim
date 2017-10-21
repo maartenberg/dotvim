@@ -1,1 +1,2 @@
-set textwidth=80
+set textwidth=120
+set spell

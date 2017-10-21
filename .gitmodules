@@ -6,10 +6,6 @@
 	path = bundle/vim-dm-syntax
 	url = git@github.com:wlue/vim-dm-syntax.git
 	ignore = dirty
-[submodule "bundle/vim-latex"]
-	path = bundle/vim-latex
-	url = https://github.com/vim-latex/vim-latex.git
-	ignore = dirty
 [submodule "bundle/vim-pandoc"]
 	path = bundle/vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc.git
@@ -22,3 +18,6 @@
 [submodule "bundle/editorconfig-vim"]
 	path = bundle/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "bundle/latex-box"]
+	path = bundle/latex-box
+	url = git://github.com/LaTeX-Box-Team/LaTeX-Box.git
