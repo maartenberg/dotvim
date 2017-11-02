@@ -16,4 +16,6 @@ exec "source " . scriptdir . "/config/commands.vim"
 exec "source " . scriptdir . "/config/graphic.vim"
 exec "source " . scriptdir . "/config/latex.vim"
 
+let g:LatexBox_Folding = 1
+
 execute pathogen#infect()
