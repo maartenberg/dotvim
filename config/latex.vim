@@ -12,3 +12,6 @@ set grepprg=grep\ -nH\ $*
 
 " OPTIONAL: This enables automatic indentation as you type.
 filetype indent on
+
+" Disable spell checking in comments
+let g:tex_comment_nospell=1
