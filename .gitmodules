@@ -21,3 +21,6 @@
 [submodule "bundle/latex-box"]
 	path = bundle/latex-box
 	url = git://github.com/LaTeX-Box-Team/LaTeX-Box.git
+[submodule "bundle/vim-toml"]
+	path = bundle/vim-toml
+	url = https://github.com/cespare/vim-toml.git
